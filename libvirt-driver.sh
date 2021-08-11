@@ -158,7 +158,7 @@ wait_ip() {
     ip=$(get_vm_ip)
 
     if [ -n "${ip}" ]; then
-      printmsg "VM got ip: ${ip}"
+      print_msg "VM got ip: ${ip}"
       break
     fi
 
