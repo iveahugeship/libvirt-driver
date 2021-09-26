@@ -35,7 +35,7 @@ readonly APP_NAME="${0##*/}"
 
 # 'create' command options.
 vm_image_name=""
-vm_vcpus=4
+vm_vcpus=8
 vm_ram=4096
 vm_network="default"
 
@@ -133,8 +133,8 @@ install_vm() {
     --name "${VM_ID}" \
     --disk "${VM_IMAGE}" \
     --import \
-    --vcpus=${vm_vcpus} \
-    --ram=${vm_ram} \
+    --vcpus ${vm_vcpus} \
+    --memory ${vm_ram} \
     --network ${vm_network} \
     --graphics none \
     --noautoconsole
@@ -197,7 +197,7 @@ wait_ssh() {
 }
 
 create() {
-  while getopts ':i:crn' arg; do
+  while getopts ':i:c:r:n:' arg; do
     case "${arg}" in
       i) vm_image_name="${OPTARG}" ;;
       c) vm_vcpus="${OPTARG}" ;;
