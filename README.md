@@ -1,6 +1,6 @@
 # libvirt-driver
 
-Just a script that you can use as a custom Giltab driver.
+Just a script that you can use as a custom Giltab Runner driver.
 Gitlab will use the script to create the VM from the base image
 and to execute jobs there.
 
